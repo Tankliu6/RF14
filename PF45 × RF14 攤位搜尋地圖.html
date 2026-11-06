@@ -56,6 +56,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .empty-msg button{color:var(--accent);font-weight:800}
 .c-g1{background:var(--g1t);color:var(--g1)} .c-g2{background:var(--g2t);color:var(--g2)} .c-g3{background:var(--g3t);color:var(--g3)}
 .c-g4{background:var(--g4t);color:var(--g4)} .c-g5{background:var(--g5t);color:var(--g5)}
+.c-g6{background:#efe6d3;color:#8a6d3b} .c-g0{background:#eceff3;color:#4b5563}
 
 /* ---------- viewport ---------- */
 #vp{position:fixed;left:0;right:0;bottom:0;overflow:hidden;touch-action:none;background:var(--bg);cursor:grab}
@@ -93,12 +94,12 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .mhead .sub span{display:inline-block;background:var(--ink);color:#fff;border-radius:8px;padding:1px 12px;margin-right:10px}
 .mhead .how{font-size:18px;color:#4b5563;text-align:right;line-height:1.6}
 .hall{background:#fff;border:3px solid #3b3b3b;border-radius:6px;padding:26px 30px 30px;display:grid;
-  grid-template-columns:120px max-content 128px;column-gap:26px;width:max-content}
+  grid-template-columns:max-content 128px;column-gap:26px;width:max-content}
 .leftnote{grid-row:1/span 3;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
   color:var(--muted);font-size:19px;line-height:1.6;font-weight:700;border-right:2px dashed var(--line);padding-right:18px}
 .arrowL{font-size:54px;line-height:1;color:#9ca3af}
-.main{grid-column:2}
-.wall{grid-column:3;grid-row:1/span 3;display:flex;flex-direction:column;justify-content:space-between;border-left:2px dashed var(--line);padding-left:16px}
+.main{grid-column:1}
+.wall{grid-column:2;grid-row:1;display:flex;flex-direction:column;justify-content:space-between;border-left:2px dashed var(--line);padding-left:16px}
 .wall .grp{display:flex;flex-direction:column;gap:8px}
 .wall .grp div,.corp div{border:2px solid #9ca3af;border-radius:8px;background:#fafafa;padding:10px 6px;text-align:center;font-size:17px;font-weight:700}
 .wall .cap{font-size:14px;color:var(--muted);text-align:center}
@@ -143,8 +144,9 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .corp{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .corp div{font-size:16px}
 .lowernote{height:880px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:var(--muted);font-size:19px;font-weight:700;line-height:1.7}
-.bottom{grid-column:2;position:relative;height:64px;margin-top:14px;border-top:3px solid #3b3b3b}
-.door{position:absolute;top:6px;transform:translateX(-50%);text-align:center;font-size:20px;font-weight:900;line-height:1.15}
+.bottom{grid-column:1;position:relative;height:150px;margin-top:14px;border-top:3px solid #3b3b3b}
+.door{position:absolute;top:6px;transform:translateX(-50%);text-align:center;font-size:20px;font-weight:900;line-height:1.2;white-space:nowrap}
+.door small{font-size:15px;font-weight:700;color:#4b5563}
 .door .ar{font-size:26px;color:#b42318}
 .walltag{position:absolute;top:8px;transform:translateX(-50%);font-size:15px;color:var(--muted);font-weight:700;border:2px solid #9ca3af;border-radius:6px;padding:2px 8px;background:#fafafa;white-space:nowrap}
 .mfoot{margin-top:18px;font-size:16px;color:var(--muted)}
@@ -158,6 +160,44 @@ input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-sea
 @keyframes pulse{0%,100%{box-shadow:inset 0 0 0 0 rgba(106,76,219,.0)}50%{box-shadow:inset 0 0 0 14px rgba(106,76,219,.35)}}
 .starred::after{content:"★";position:absolute;right:4px;top:2px;font-size:17px;color:#f59e0b;text-shadow:0 0 2px #fff}
 .wcell{position:relative}
+
+/* ---- 開拓模型祭 & landmarks ---- */
+.rfpanel,.ulpanel{position:relative;flex:none}
+.rf-title{position:absolute;background:#8a6d3b;color:#fff;font-weight:900;font-size:22px;border-radius:8px;padding:6px 14px;white-space:nowrap}
+.rf-desk{position:absolute;background:#fbe9c6;color:#8a6d3b;font-weight:800;font-size:17px;border-radius:6px;padding:10px 26px;white-space:nowrap}
+.rf-lw{position:absolute;width:120px;background:#fbe9c6;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  font-size:20px;font-weight:800;color:#7c6136;writing-mode:vertical-rl;letter-spacing:4px}
+.rf-lw svg{writing-mode:horizontal-tb}
+.rf-comp{position:absolute;background:#eef6e4;border:3px solid #8cc152;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center}
+.rf-comp b{display:block;font-size:46px;line-height:1.3;color:#3f6d1c;font-weight:900}
+.rf-comp small{display:block;margin-top:14px;font-size:22px;color:#5f8a3a;font-weight:700}
+.rf-letter{position:absolute;transform:translateX(-50%);width:52px;height:48px;border-radius:12px;background:#8a6d3b;color:#fff;font-size:30px;font-weight:900;
+  display:flex;align-items:center;justify-content:center}
+.rf-cell{position:absolute;border:2px solid #6b5a3e;margin-top:-2px;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;color:#3b3b3b;background:#fff}
+.rf-cell.cb{background:#d8c8a6} .rf-cell.cu{background:#bcd9e4}
+.rf-tag{position:absolute;transform:translateY(-50%);max-width:150px;font-size:16.5px;font-weight:800;line-height:1.15;padding:5px 8px;border-radius:7px;background:#fff;
+  border:1.5px solid #e6dcc8;word-break:break-word}
+.rf-tag.tb{color:#7c6136} .rf-tag.tt{color:#126b78;border-color:#cfe3e8}
+.rf-bolt{position:absolute;transform:translateY(-50%)}
+.rf-proto{position:absolute;background:#c9b48a;color:#fff;font-size:30px;font-weight:900;letter-spacing:6px;border-radius:6px;display:flex;align-items:center;justify-content:center}
+.rf-wb{position:absolute;border:2px solid #6b5a3e;background:#fff;font-size:17px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-left:-1px}
+.rf-wb.v{align-items:flex-end;padding-bottom:6px}
+.rf-pillar{position:absolute;height:40px;background:#1f1f1f}
+.rf-wtag{position:absolute;transform:translateX(-50%);font-size:16.5px;font-weight:800;color:#7c6136;white-space:nowrap;padding:3px 8px;border-radius:6px;background:#fff}
+.ul{position:absolute;border:2px solid #4b5563;border-radius:4px;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;
+  font-weight:800;color:#1f2937;padding:4px;line-height:1.2}
+.ul.sm{font-size:18px} .ul.gray{background:#9a9a9a;color:#fff;border:none;font-size:30px;writing-mode:vertical-rl}
+.ul.yellow{background:#f2d73a;border:none;font-size:34px} .ul.green{background:#8cc152;border:none;color:#fff;font-size:34px;writing-mode:vertical-rl}
+.ul.orange{background:#e9772b;border:none;color:#fff;font-size:34px;writing-mode:vertical-rl;letter-spacing:8px}
+.ul.big{font-size:64px;font-weight:900}
+.ul-out{position:absolute;background:repeating-linear-gradient(45deg,#f1eee8 0 14px,#e7e2d8 14px 28px);color:#a8a29e;font-size:30px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;border-right:3px solid #3b3b3b;border-bottom:3px solid #3b3b3b}
+.corp div,.wall .grp div{position:relative}
+.checkin{position:absolute;top:38px;transform:translateX(-50%);background:#e03131;color:#fff;font-weight:900;font-size:20px;padding:8px 18px;border-radius:4px}
+.army{position:absolute;top:34px;height:62px;background:#f1ea6a;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#3b3b3b}
+.map.q [data-i]:not(.hit):not(.cell):not(.wcell){opacity:.3}
+[data-i].hit{background:var(--hit)!important;opacity:1!important;color:#1d2129}
+[data-i].focus{outline:5px solid var(--accent);outline-offset:-2px;z-index:3;animation:pulse 1.1s ease-in-out 3}
 </style>
 </head>
 <body>
@@ -172,7 +212,7 @@ input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-sea
   <div class="row2">
     <div class="search" id="sbox">
       <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input id="q" type="search" inputmode="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="搜尋社團名或攤位號（如 B25）">
+      <input id="q" type="search" inputmode="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="搜尋社團／廠商名或攤位號（如 B25）">
       <button class="clr" id="clr" aria-label="清除">✕</button>
     </div>
     <button id="starBtn" aria-label="收藏清單"><span class="s">★</span><span id="starN">0</span></button>
@@ -195,7 +235,7 @@ input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-sea
 </div>
 
 <script>
-const DATA = {"d1":[["A",[1,2],"杏。Xing"],["A",[3,4],"Hosto"],["A",[5],"打牌萌"],["A",[6],"稻禾工作室"],["A",[7],"夢靈虎居"],["A",[8],"蠟筆琪琪"],["A",[9],"月面基地"],["A",[10],"桑尤姆的部屋"],["A",[11],"萌妹子前線"],["A",[12],"南方山竹筍"],["A",[13,14],"包子部屋&大磨界+GIO"],["A",[15],"俺企鵝"],["A",[16],"鉛筆盒"],["A",[17],"剩菜剩飯"],["A",[18],"Lycoris Garden"],["A",[19,20],"正經同人"],["A",[21,22],"月貓創意"],["A",[23,24],"空想工房．Reverie Studio"],["A",[25,26],"雷光刻幻"],["A",[27,28],"塗鴉星狐窩"],["A",[29],"Ya喵子的貓窩"],["A",[30],"手創館"],["A",[31,32],"異私特"],["A",[33,34],"日落之旅藥水舖"],["A",[35,36],"Edge Three"],["A",[37,38],"ZAP製造所"],["A",[39,40],"織名作家"],["A",[41,42],"眾惡堂工坊"],["A",[43,44],"琉璃茉莉 原創設計"],["B",[1,2],"【好運狐狸】"],["B",[3],"藍胖肥龍"],["B",[4],"新夭 Brainholesky"],["B",[5,6],"賽路伊斯-七曜個人"],["B",[7,8],"烯醇enol"],["B",[9],"奇牠記事"],["B",[10],"宇宙垃圾"],["B",[11,12],"My Garden 我的庭園（羊毛氈手作坊）"],["B",[13],"Jingle Deer Studio"],["B",[14],"星之軒"],["B",[15],"P2Konoha"],["B",[16],"風橙實驗室 HR Lab."],["B",[17,18],"驕傲香蕉"],["B",[19],"Hashira十四"],["B",[20],"本本力學實驗室"],["B",[21,22],"夏天久一點"],["B",[23],"超斬開"],["B",[24],"紳士的秘密基地"],["B",[25],"千夏-千年夏憶-"],["B",[26],"Karen"],["B",[27],"Awan"],["B",[28],"F.W.ZHolic"],["B",[29],"超級米漿"],["B",[30],"千仞蘭庭"],["B",[31,32],"ＳＨＩＮＩＮＧ"],["B",[33],"ＵＲＡＮ-ＦＡＣＴＯＲＹ"],["B",[34],"快樂罌粟花自耕農會"],["B",[35,36],"花屋創意(花屋la fleur)"],["B",[37,38],"毛毛創森坊"],["B",[39],"小白鹿 WHITE DEER"],["B",[40],"EMO個人"],["B",[41],"阿里阿巴巴阿千千"],["B",[42],"大阪風男"],["B",[43,44],"猛少女之拳"],["C",[1,2],"蟲蟲商號"],["C",[3,4],"一輩子少女樂團"],["C",[5,6],"星花火"],["C",[7,8],"格里芬故事屋"],["C",[9,10],"獸耳麵包"],["C",[11,12],"規尬的書店"],["C",[13],"六太日日人"],["C",[14],"幼彩社"],["C",[15],"稚稚丸"],["C",[16],"やまぐちぷりんと"],["C",[17],"ざしきねこ"],["C",[18],"Delayder"],["C",[19],"宇宙波神山崎本社"],["C",[20],"有害蕈類集會所"],["C",[21,22],"Rabbit Candy"],["C",[23,24],"早安柴之美"],["C",[25,26],"麒麟的快樂繪圖之家"],["C",[27,28],"大江戶外萌"],["C",[29],"DeityMark"],["C",[30],"粗線條工房"],["C",[31],"阿嵐章魚繪圖手作舖"],["C",[32],"Uniautomata Studio"],["C",[33],"影文庫計畫"],["C",[34],"亞瑪吉大肥羊"],["C",[35],"小島伊織"],["C",[36],"蚩尤"],["C",[37,38],"鬍子的美人茗茶"],["C",[39,40],"肉腿本舖NARU"],["C",[41,42],"bbibinbing"],["C",[43,44],"大幼蟲"],["D",[1],"女巫之骰"],["D",[2],"超級同人大戰"],["D",[3],"殘業TONIGHT"],["D",[4],"周休二日"],["D",[5,6],"仙界大濕快樂攤"],["D",[7,8],"RongChuhan榮初涵"],["D",[9],"艾茵莉思&毛毛丫"],["D",[10],"芭嘎nono阿芭芭♕"],["D",[11],"PoiLiang"],["D",[12],"岸間晴乃のイラストテンジ"],["D",[13,14],"格爾迪恩的芙拉爾"],["D",[15,16],"甜珍珠"],["D",[17,18],"74 Production"],["D",[19],"烏冬傳說"],["D",[20],"大概是…夭謬?"],["D",[21,22],"大波斯菊花園"],["D",[23,24],"哈魯醬"],["D",[25],"Jasonz Artwork"],["D",[26],"fu富"],["D",[27],"和製雪景"],["D",[28],"ブラック・クラッシャー"],["D",[29],"夏至日NATSUHI"],["D",[30],"方塊Bokkusu"],["D",[31,32],"歸宅本部"],["D",[33,34],"羊駝怪人與陳家胖雞"],["D",[35],"SCIFASAURUS(海穹文化)"],["D",[36],"寒武紀化石"],["D",[37],"咖哩東"],["D",[38],"ACG動漫迷的秘密會社"],["D",[39,40],"LSS的機械陣地"],["D",[41,42],"UAV實驗室"],["D",[43,44],"景美仙姬巖"],["M",[1,2],"尼腓工作室"],["M",[3],"龍龍小舖"],["M",[4],"青雨閣"],["M",[5],"Takodoko"],["M",[6],"Hanasawa花澤"],["M",[7],"Xamu ArtWorks"],["M",[8],"七叔神社"],["M",[9,10],"Kakela*Hane"],["M",[11],"隨意坊"],["M",[12],"骨頭蹦"],["M",[13,14],"筑波的快樂輻射森林"],["M",[15],"魔法燒酒"],["M",[16],"華麗謝幕"],["M",[17,18],"奈櫻工坊"],["M",[19],"Arrow Workshop"],["M",[20],"ArnebWorks"],["M",[21],"Kuro Kanin"],["M",[22],"Yutakako 裕子"],["M",[23,24],"さかな公園"],["M",[25,26],"弾KAIOU"],["M",[27,28],"萌夜茶会"],["M",[29],"心動大鳥團"],["M",[30],"遜咖歡樂屋"],["M",[31],"不要碰我的狗"],["M",[32],"NephiAnime"],["M",[33],"Ellie工作坊"],["M",[35],"鳩DEVIL部"],["M",[36],"404便利通販"],["M",[37],"VCCC"],["M",[38],"興趣始燃"],["M",[39,40],"奶油湯匙"],["M",[41,42],"箱庭交響曲"],["M",[43,44],"待援生活"],["M",[45],"NNK777"],["M",[46],"河狸Biba"],["M",[47,48],"RoyBoy羅蔔坑"],["N",[1,2],"小律 Ritsu"],["N",[3,4],"燼璃JinLi"],["N",[5,6],"牛牛Niu"],["N",[7,8],"Nao Cosplay"],["N",[9,10],"信撒旦得永生"],["N",[11,12],"TENxYAU 姐妹丼"],["N",[13,14],"阿奈 Yuuna."],["N",[15,16],"艾青的眾青平身"],["N",[17,18],"星喵Aastaneko"],["N",[19,20],"紅葉 Momiko"],["N",[21,22],"教皇和牛專賣工作室"],["N",[23,24],"醉宮Yomiya"],["N",[25,26],"伶伶 Linnng"],["N",[27,28],"汪汪 Won Cosplay"],["N",[29,30],"月宮櫻Tsukimiya Sakura"],["N",[31,32],"Annie Meow凜花花"],["N",[33,34],"0蛋黃女子由奈0"],["N",[35,36],"結Yuiゆい"],["N",[37,38],"小漾樣x樣樣子"],["N",[39,40],"Tiffany小豬舍"],["N",[41],"四巫日Momihi cos"],["N",[42],"飲料只喝鮮奶茶"],["N",[43,44],"千島Chishima"],["N",[45,46],"咖啡 cosplay"],["N",[47,48],"♡可凡kofan0331"],["O",[1,2],"HattieCosplay"],["O",[3],"Shiori cosplay"],["O",[4],"夏艾有擺攤"],["O",[5,6],"菈小菈本人"],["O",[7,8],"哺哺鼻鼻蓓蓓"],["O",[9,10],"昀Yun cos&photo"],["O",[11,12],"樂褆超可愛"],["O",[13],"瑞紗Coresa"],["O",[14],"錦燈Akari"],["O",[15,16],"光Guang Cosplay"],["O",[17,18],"兔兔蟲cosplay"],["O",[19],"曉愛今天有擺攤"],["O",[20],"杯主委加碼"],["O",[21,22],"朵莉 Tori"],["O",[23,24],"AKANE Cosplay"],["O",[25,26],"玄子Genko"],["O",[27,28],"七七小姐_Miss Seven"],["O",[29],"阿慧社"],["O",[30],"白飯飯fannn"],["O",[31,32],"貓草DAMA"],["O",[33],"Kazeki風希"],["O",[34,35],"最強斂財者"],["O",[36],"音符ONPU"],["O",[37],"桂優 Katsurayu"],["O",[38],"小羊/풍신 Kohitsuji_Pungsin"],["O",[39,40],"黎黎寧寧"],["O",[41,42],"米浮mifu"],["O",[43],"AKA鞠-Cosplay"],["O",[44,45],"Meikoです"],["O",[46],"容子"],["O",[47,48],"#DREAMProject [JooA Cosplay]"],["P",[1,2],"Helene海琳"],["P",[3,4],"野人文庫"],["P",[5,6],"超次元美少女ARISA"],["P",[7,8],"鮭魚要吃生的"],["P",[9,10],"泥泥汝"],["P",[11,12],"泥泥汝的魔法學院"],["P",[13,14],"小冷leng"],["P",[15],"Ayami x Yaki"],["P",[16],"逆時空三次元"],["P",[17,18],"COSMIX#4th"],["P",[19,20],"COSMIX#3rd"],["P",[21,22],"COSMIX#2nd"],["P",[23,24],"COSMIX#1st"],["P",[25,26],"壯哉我大佞總"],["P",[27,28],"紀奈奈 Hatori Sama"],["P",[29,30],"霸氣是隻貓"],["P",[31,32],"一個簡單的黛黛"],["P",[33,34],"塔可喵喵教 TakoNeko"],["P",[35,36],"Project Cosplay"],["P",[37,38],"百合吉娃娃"],["P",[39,40],"餘曦YuHsi"],["P",[41],"丁丁dingding"],["P",[42],"小貓奈奈的鍊金工坊"],["P",[43],"Yuzuki Lily"],["P",[44],"三喬主公"],["P",[45,46],"Tee"],["P",[47,48],"餓小璇Miu"],["Q",[1,2],"TRY&方言二人社会"],["Q",[3],"世界樹圖書館"],["Q",[4],"葛西的腐敗西瓜園"],["Q",[5],"冷水青蛙鍋"],["Q",[7],"貓專用牛乳"],["Q",[8],"好緊先生"],["Q",[9],"shishi不是TT"],["Q",[10],"Prediction"],["Q",[11,12],"大慶集團"],["Q",[13,14],"J Studio 模型工坊"],["Q",[15],"被世界遺忘X火腿泡芙"],["Q",[16],"狂気のウサギ"],["Q",[17,18],"Monster Build"],["Q",[19,20],"Bebop Design"],["Q",[21,22],"廷a理工御宅"],["Q",[23],"Monster Hero"],["Q",[24],"怪獸箱_monsterbox"],["Q",[25,26],"Hsun Craft Studio"],["Q",[27,28,29],"Marvix.F Model Studio"],["Q",[30,31,32,33],"R-one studio"],["Q",[34,35,36],"箱龜盒子"],["Q",[37],"狂想風珀"],["Q",[38],"八爪魚雕塑"],["Q",[39],"平行世界-二胡實驗室"],["Q",[40],"二色幽紫蝶"],["Q",[41,42],"森林裡有熊窩"],["Q",[43],"實體化技師團"],["Q",[44],"Fikushon 虛構社"],["Q",[45,46],"イレブンナイン"],["Q",[47,48],"FuwaFuwa軟趴趴"],["R",[1],"沒川狼雨"],["R",[2],"擬現工坊"],["R",[3,4],"夢工廠模型公仔工作室"],["R",[5,6],"帝辛引力模型工作室"],["R",[7],"彫民"],["R",[8],"杉貓"],["R",[9,10],"有貓氏陶"],["R",[11,12],"Ah-Wei"],["R",[13,14],"呼嚕呼嚕溫蒂"],["R",[15,16],"膠愛模型工作室"],["R",[17,18],"大葉多媒體"],["R",[19,20],"臺灣動漫模型產學協會"],["R",[21],"Evilwaystudio"],["R",[22],"Mushi Bros Toys"],["R",[23,24],"角落工作室"],["R",[25],"肉球不加蛋"],["R",[26],"Jerry創作工作室"],["R",[27,28],"臨時工作室"],["R",[29],"安迪"],["R",[30],"異星玩具"],["R",[31],"Dice Knight"],["R",[32],"三線鼠工作室"],["R",[33,34],"KH MODEL STUDIO"],["R",[35,36],"ToyPalace"],["R",[37,38],"Neiba Design"],["R",[39],"手作休息室"],["R",[40],"天之火"],["R",[41],"彥子彥子"],["R",[42],"one one collection"],["R",[43],"十年一件_A君"],["R",[44],"阿丹貓模型工作室"],["R",[45,46],"模型幻想"],["R",[47,48],"九五二漆"],["S",[1,2,3,4],"模型DNA"],["S",[5,6],"德國MOZART大紅刀"],["S",[7],"白色木馬號工作室"],["S",[8],"GothiCraftI"],["S",[9],"J個怪獸模型公仔工作室"],["S",[10],"EWA STUDIO / 東西像工作室"],["S",[11,12],"大罪妖精記"],["S",[13,14],"艾力克斯匠 alexspace54"],["S",[15,16],"灰島工作室"],["S",[17,18],"赤森工作室"],["S",[19,20,21],"Noah’s Crate Studio"],["S",[22,23,24],"大腹工作室"],["S",[25,26],"水泊白鹿"],["S",[27],"甜酒/sweetwine"],["S",[28],"ZFUNKY"],["S",[29,30],"UZ STUDIO"],["S",[31],"ANRS Project"],["S",[32],"峰巢工作室"],["S",[33,34],"R匠研究工坊"],["S",[35,36],"sugarcrowns"],["S",[37,38],"台灣模型嗜好發展協會"],["S",[39,40],"泉源studio"],["S",[41,42],"TANgent"],["S",[43],"咲笑工作室"],["S",[44],"卡卡修的雜物工房"],["S",[45,46],"某王城模型工作室"],["S",[47,48],"MTS軍模館"],["T",[13],"petpark studio"],["T",[14],"芄妹的美食小世界"],["T",[15],"崗哨工作室 Guard Post Studio"],["T",[16],"魔亞方舟戰棋專賣店"],["T",[17,18],"Tazo工坊"],["T",[19,20],"色繪團結工聯"],["T",[21],"洗筆洗到咖啡杯"],["T",[22],"MAGICSTAR"],["T",[23,24],"conscious8th"],["T",[25,26],"G&K modeling"],["T",[27,28],"女巫寶盒"],["T",[29,30],"TwelveStudios"],["T",[31],"營養口糧兵工廠"],["T",[32],"模型山林有一村"],["T",[33],"MacStudio"],["T",[34],"休日工房く"],["T",[35],"紙作物OrgaPaper"],["T",[36],"Azure鳥紙狂想"],["W",[1,2],"三色坊"],["W",[3,4],"助客勃"],["W",[5,6],"Atelier Kingyo(金魚工房)"],["W",[7],"Haku Works"],["W",[8],"赤瞳不是紅色眼睛"],["W",[9,10],"UNLOLI"],["W",[11,12],"REI’s ROOM"],["W",[13,14],"coneco.Y. (洋食小貓)"],["W",[15,16],"Bubble Wave"],["W",[17,18],"BsWs黑星白星"],["W",[19,20],"蒼銀之星"],["W",[21,22],"Bygin-白巾"],["W",[23,24],"Catity cosplay"],["W",[25,26],"雨波HaneAme"]],"d2":[["A",[1,2],"杏。Xing"],["A",[3,4],"Hosto"],["A",[5],"打牌萌"],["A",[6],"稻禾工作室"],["A",[7],"夢靈虎居"],["A",[9],"月面基地"],["A",[10],"桑尤姆的部屋"],["A",[11],"萌妹子前線"],["A",[12],"南方山竹筍"],["A",[13,14],"包子部屋&大磨界+GIO"],["A",[15],"俺企鵝"],["A",[16],"鉛筆盒"],["A",[17],"剩菜剩飯"],["A",[18],"Lycoris Garden"],["A",[19,20],"正經同人"],["A",[21,22],"月貓創意"],["A",[23,24],"空想工房．Reverie Studio"],["A",[25,26],"雷光刻幻"],["A",[27,28],"塗鴉星狐窩"],["A",[29],"Ya喵子的貓窩"],["A",[30],"手創館"],["A",[31,32],"異私特"],["A",[33,34],"日落之旅藥水舖"],["A",[35,36],"Edge Three"],["A",[37,38],"ZAP製造所"],["A",[39,40],"織名作家"],["A",[41,42],"眾惡堂工坊"],["A",[43,44],"琉璃茉莉 原創設計"],["B",[1,2],"【好運狐狸】"],["B",[3],"藍胖肥龍"],["B",[4],"新夭 Brainholesky"],["B",[5,6],"賽路伊斯-七曜個人"],["B",[7,8],"烯醇enol"],["B",[10],"宇宙垃圾"],["B",[11,12],"My Garden 我的庭園（羊毛氈手作坊）"],["B",[13],"Jingle Deer Studio"],["B",[14],"星之軒"],["B",[15],"P2Konoha"],["B",[16],"風橙實驗室 HR Lab."],["B",[17,18],"驕傲香蕉"],["B",[19],"Hashira十四"],["B",[20],"本本力學實驗室"],["B",[21,22],"夏天久一點"],["B",[23],"超斬開"],["B",[24],"紳士的秘密基地"],["B",[25],"千夏-千年夏憶-"],["B",[26],"Karen"],["B",[27],"Awan"],["B",[28],"F.W.ZHolic"],["B",[29],"超級米漿"],["B",[30],"ＵＲＡＮ-ＦＡＣＴＯＲＹ"],["B",[31,32],"ＳＨＩＮＩＮＧ"],["B",[33],"秋奈-AKINA"],["B",[34],"快樂罌粟花自耕農會"],["B",[35,36],"花屋創意(花屋la fleur)"],["B",[37,38],"毛毛創森坊"],["B",[39],"小白鹿 WHITE DEER"],["B",[40],"EMO個人"],["B",[41],"阿里阿巴巴阿千千"],["B",[42],"大阪風男"],["B",[43,44],"OriginZero"],["C",[1,2],"蟲蟲商號"],["C",[3,4],"一輩子少女樂團"],["C",[5,6],"星花火"],["C",[7,8],"格里芬故事屋"],["C",[9,10],"獸耳麵包"],["C",[11,12],"規尬的書店"],["C",[13],"六太日日人"],["C",[14],"幼彩社"],["C",[15],"稚稚丸"],["C",[16],"やまぐちぷりんと"],["C",[17],"ざしきねこ"],["C",[18],"Delayder"],["C",[19],"宇宙波神山崎本社"],["C",[20],"有害蕈類集會所"],["C",[21,22],"Rabbit Candy"],["C",[23],"howu好油聚集地"],["C",[24],"早安柴之美"],["C",[25,26],"麒麟的快樂繪圖之家"],["C",[27,28],"大江戶外萌"],["C",[29],"DeityMark"],["C",[30],"粗線條工房"],["C",[31],"阿嵐章魚繪圖手作舖"],["C",[32],"Yun屋"],["C",[33],"影文庫計畫"],["C",[34],"亞瑪吉大肥羊"],["C",[35],"小島伊織"],["C",[36],"蚩尤"],["C",[37,38],"鬍子的美人茗茶"],["C",[39,40],"肉腿本舖NARU"],["C",[41,42],"bbibinbing"],["C",[43,44],"大幼蟲"],["D",[1],"女巫之骰"],["D",[2],"超級同人大戰"],["D",[3],"殘業TONIGHT"],["D",[4],"周休二日"],["D",[5,6],"仙界大濕快樂攤"],["D",[7],"IVY"],["D",[8],"狗兒Ruka"],["D",[9],"艾茵莉思&毛毛丫"],["D",[10],"芭嘎nono阿芭芭♕"],["D",[11],"PoiLiang"],["D",[12],"岸間晴乃のイラストテンジ"],["D",[13,14],"格爾迪恩的芙拉爾"],["D",[15,16],"甜珍珠"],["D",[17,18],"74 Production"],["D",[19],"烏冬傳說"],["D",[20],"大概是…夭謬?"],["D",[21,22],"大波斯菊花園"],["D",[23,24],"哈魯醬"],["D",[25],"Jasonz Artwork"],["D",[26],"fu富"],["D",[27],"和製雪景"],["D",[28],"ブラック・クラッシャー"],["D",[29],"夏至日NATSUHI"],["D",[30],"方塊Bokkusu"],["D",[31,32],"歸宅本部"],["D",[33,34],"羊駝怪人與陳家胖雞"],["D",[35],"SCIFASAURUS(海穹文化)"],["D",[36],"寒武紀化石"],["D",[37],"咖哩東"],["D",[38],"ACG動漫迷的秘密會社"],["D",[39,40],"LSS的機械陣地"],["D",[41],"幻想布萊梅"],["D",[42],"UAV實驗室"],["D",[43,44],"景美仙姬巖"],["M",[1,2],"尼腓工作室"],["M",[3],"龍龍小舖"],["M",[4],"青雨閣"],["M",[5,6],"Varlyn琳"],["M",[7],"青葉工房"],["M",[8],"Xamu ArtWorks"],["M",[9],"Hanasawa花澤"],["M",[10],"Takodoko"],["M",[11],"隨意坊"],["M",[12],"骨頭蹦"],["M",[13,14],"筑波的快樂輻射森林"],["M",[15],"魔法燒酒"],["M",[16],"華麗謝幕"],["M",[17,18],"奈櫻工坊"],["M",[19],"Arrow Workshop"],["M",[20],"ArnebWorks"],["M",[21],"Kuro Kanin"],["M",[22],"Yutakako 裕子"],["M",[23,24],"さかな公園"],["M",[25,26],"弾KAIOU"],["M",[27,28],"萌夜茶会"],["M",[29],"心動大鳥團"],["M",[30],"遜咖歡樂屋"],["M",[31],"不要碰我的狗"],["M",[32],"NephiAnime"],["M",[33],"Ellie工作坊"],["M",[34],"吉喵熊熊"],["M",[35],"鳩DEVIL部"],["M",[36],"404便利通販"],["M",[37],"VCCC"],["M",[38],"興趣始燃"],["M",[39,40],"奶油湯匙"],["M",[41,42],"箱庭交響曲"],["M",[43,44],"待援生活"],["M",[45],"NNK777"],["M",[46],"河狸Biba"],["M",[47,48],"RoyBoy羅蔔坑"],["N",[1,2],"小律 Ritsu"],["N",[3,4],"燼璃JinLi"],["N",[5,6],"牛牛Niu"],["N",[7,8],"Nao Cosplay"],["N",[9,10],"信撒旦得永生"],["N",[11,12],"TENxYAU 姐妹丼"],["N",[13,14],"阿奈 Yuuna."],["N",[15,16],"艾青的眾青平身"],["N",[17,18],"星喵Aastaneko"],["N",[19,20],"紅葉 Momiko"],["N",[21,22],"教皇和牛專賣工作室"],["N",[23,24],"醉宮Yomiya"],["N",[25,26],"紫絃SHIZURU"],["N",[27,28],"小艾"],["N",[29,30],"月宮櫻Tsukimiya Sakura"],["N",[31,32],"Annie Meow凜花花"],["N",[33,34],"0蛋黃女子由奈0"],["N",[35,36],"結Yuiゆい"],["N",[38],"小朵time"],["N",[39,40],"Tiffany小豬舍"],["N",[41],"四巫日Momihi cos"],["N",[42],"飲料只喝鮮奶茶"],["N",[43,44],"千島Chishima"],["N",[45,46],"咖啡 cosplay"],["N",[47,48],"♡可凡kofan0331"],["O",[1,2],"HattieCosplay"],["O",[3],"Shiori cosplay"],["O",[4],"夏艾有擺攤"],["O",[5,6],"菈小菈本人"],["O",[7,8],"哺哺鼻鼻蓓蓓"],["O",[9,10],"昀Yun cos&photo"],["O",[11,12],"樂褆超可愛"],["O",[13],"瑞紗Coresa"],["O",[14],"錦燈Akari"],["O",[15,16],"光Guang Cosplay"],["O",[17,18],"兔兔蟲cosplay"],["O",[19],"曉愛今天有擺攤"],["O",[20],"杯主委加碼"],["O",[21,22],"朵莉 Tori"],["O",[23,24],"MIYANA咪呀"],["O",[25,26],"玄子Genko"],["O",[27,28],"七七小姐_Miss Seven"],["O",[29],"阿慧社"],["O",[30],"白飯飯fannn"],["O",[31,32],"貓草DAMA"],["O",[33],"Kazeki風希"],["O",[34],"最強斂財者"],["O",[36],"音符ONPU"],["O",[37],"桂優 Katsurayu"],["O",[38],"小羊/풍신 Kohitsuji_Pungsin"],["O",[39,40],"黎黎寧寧"],["O",[41,42],"米浮mifu"],["O",[43],"AKA鞠-Cosplay"],["O",[44],"斂財海豹 枳枳ZHIZIH"],["O",[45],"Meikoです"],["O",[46],"容子"],["O",[47,48],"#DREAMProject [JooA Cosplay]"],["P",[1,2],"Helene海琳"],["P",[3,4],"野人文庫"],["P",[5,6],"超次元美少女ARISA"],["P",[7,8],"鮭魚要吃生的"],["P",[9,10],"泥泥汝"],["P",[11,12],"泥泥汝的魔法學院"],["P",[13,14],"小冷leng"],["P",[15],"Ayami x Yaki"],["P",[16],"逆時空三次元"],["P",[17,18],"COSMIX#4th"],["P",[19,20],"COSMIX#3rd"],["P",[21,22],"COSMIX#2nd"],["P",[23,24],"COSMIX#1st"],["P",[25,26],"壯哉我大佞總"],["P",[27,28],"紀奈奈 Hatori Sama"],["P",[29,30],"霸氣是隻貓"],["P",[31,32],"一個簡單的黛黛"],["P",[33,34],"塔可喵喵教 TakoNeko"],["P",[35,36],"Project Cosplay"],["P",[37,38],"百合吉娃娃"],["P",[39,40],"餘曦YuHsi"],["P",[41],"丁丁dingding"],["P",[42],"小貓奈奈的鍊金工坊"],["P",[43],"Yuzuki Lily"],["P",[44],"三喬主公"],["P",[45,46],"Tee"],["P",[47,48],"餓小璇Miu"],["Q",[13,14],"J Studio 模型工坊"],["Q",[15],"被世界遺忘X火腿泡芙"],["Q",[16],"狂気のウサギ"],["Q",[17,18],"魔星工作室"],["Q",[19,20],"Bebop Design"],["Q",[21,22],"廷a理工御宅"],["Q",[23],"Monster Hero"],["Q",[24],"怪獸箱_monsterbox"],["Q",[25,26],"Hsun Craft Studio"],["Q",[27,28,29],"Marvix.F Model Studio"],["Q",[30,31,32,33],"R-one studio"],["Q",[34,35,36],"箱龜盒子"],["R",[1],"沒川狼雨"],["R",[2],"擬現工坊"],["R",[3,4],"夢工廠模型公仔工作室"],["R",[5,6],"帝辛引力模型工作室"],["R",[7],"彫民"],["R",[8],"杉貓"],["R",[9,10],"有貓氏陶"],["R",[11,12],"Ah-Wei"],["R",[13,14],"呼嚕呼嚕溫蒂"],["R",[15,16],"膠愛模型工作室"],["R",[17,18],"大葉多媒體"],["R",[19,20],"臺灣動漫模型產學協會"],["R",[21],"Evilwaystudio"],["R",[22],"Mushi Bros Toys"],["R",[23,24],"角落工作室"],["R",[25],"肉球不加蛋"],["R",[26],"Jerry創作工作室"],["R",[27,28],"臨時工作室"],["R",[29],"安迪"],["R",[30],"異星玩具"],["R",[31],"Dice Knight"],["R",[32],"三線鼠工作室"],["R",[33,34],"KH MODEL STUDIO"],["R",[35,36],"ToyPalace"],["R",[37,38],"Neiba Design"],["R",[39],"手作休息室"],["R",[40],"David’s Studio"],["R",[41],"彥子彥子"],["R",[42],"one one collection"],["R",[43],"十年一件_A君"],["R",[44],"阿丹貓模型工作室"],["R",[45,46],"模型幻想"],["R",[47,48],"九五二漆"],["S",[1,2,3,4],"模型DNA"],["S",[5,6],"德國MOZART大紅刀"],["S",[7],"白色木馬號工作室"],["S",[8],"GothiCraftI"],["S",[9],"J個怪獸模型公仔工作室"],["S",[10],"EWA STUDIO / 東西像工作室"],["S",[11,12],"大罪妖精記"],["S",[13,14],"艾力克斯匠 alexspace54"],["S",[15,16],"灰島工作室"],["S",[17,18],"赤森工作室"],["S",[19,20,21],"Noah’s Crate Studio"],["S",[22,23,24],"大腹工作室"],["S",[25,26],"水泊白鹿"],["S",[27],"甜酒/sweetwine"],["S",[28],"ZFUNKY"],["S",[29,30],"UZ STUDIO"],["S",[31],"ANRS Project"],["S",[32],"峰巢工作室"],["S",[33,34],"R匠研究工坊"],["S",[35,36],"sugarcrowns"],["S",[37,38],"台灣模型嗜好發展協會"],["S",[39,40],"泉源studio"],["S",[41,42],"TANgent"],["S",[43],"咲笑工作室"],["S",[44],"卡卡修的雜物工房"],["S",[45,46],"某王城模型工作室"],["S",[47,48],"MTS軍模館"],["T",[13],"petpark studio"],["T",[14],"芄妹的美食小世界"],["T",[15],"崗哨工作室 Guard Post Studio"],["T",[16],"魔亞方舟戰棋專賣店"],["T",[17,18],"Tazo工坊"],["T",[19,20],"色繪團結工聯"],["T",[21],"洗筆洗到咖啡杯"],["T",[22],"MAGICSTAR"],["T",[23,24],"conscious8th"],["T",[25,26],"G&K modeling"],["T",[27,28],"女巫寶盒"],["T",[29,30],"TwelveStudios"],["T",[31],"營養口糧兵工廠"],["T",[32],"模型山林有一村"],["T",[33],"MacStudio"],["T",[34],"休日工房く"],["T",[35],"紙作物OrgaPaper"],["T",[36],"Azure鳥紙狂想"],["W",[1,2],"三色坊"],["W",[3,4],"助客勃"],["W",[5,6],"Atelier Kingyo(金魚工房)"],["W",[7],"Haku Works"],["W",[8],"赤瞳不是紅色眼睛"],["W",[9,10],"UNLOLI"],["W",[11,12],"REI’s ROOM"],["W",[13,14],"coneco.Y. (洋食小貓)"],["W",[15,16],"Bubble Wave"],["W",[17,18],"BsWs黑星白星"],["W",[19,20],"蒼銀之星"],["W",[21,22],"Bygin-白巾"],["W",[23,24],"Catity cosplay"],["W",[25,26],"雨波HaneAme"]]};
+const DATA = {"d1":[["A",[1,2],"杏。Xing"],["A",[3,4],"Hosto"],["A",[5],"打牌萌"],["A",[6],"稻禾工作室"],["A",[7],"夢靈虎居"],["A",[8],"蠟筆琪琪"],["A",[9],"月面基地"],["A",[10],"桑尤姆的部屋"],["A",[11],"萌妹子前線"],["A",[12],"南方山竹筍"],["A",[13,14],"包子部屋&大磨界+GIO"],["A",[15],"俺企鵝"],["A",[16],"鉛筆盒"],["A",[17],"剩菜剩飯"],["A",[18],"Lycoris Garden"],["A",[19,20],"正經同人"],["A",[21,22],"月貓創意"],["A",[23,24],"空想工房．Reverie Studio"],["A",[25,26],"雷光刻幻"],["A",[27,28],"塗鴉星狐窩"],["A",[29],"Ya 喵子的貓窩"],["A",[30],"手創館"],["A",[31,32],"異私特"],["A",[33,34],"日落之旅藥水舖"],["A",[35,36],"Edge Three"],["A",[37,38],"ZAP 製造所"],["A",[39,40],"織名作家"],["A",[41,42],"眾惡堂工坊"],["A",[43,44],"琉璃茉莉 原創設計"],["B",[1,2],"【好運狐狸】"],["B",[3],"藍胖肥龍"],["B",[4],"新夭 Brainholesky"],["B",[5,6],"賽路伊斯 - 七曜個人"],["B",[7,8],"烯醇 enol"],["B",[9],"奇牠記事"],["B",[10],"宇宙垃圾"],["B",[11,12],"My Garden 我的庭園（羊毛氈手作坊）"],["B",[13],"Jingle Deer Studio"],["B",[14],"星之軒"],["B",[15],"P2Konoha"],["B",[16],"風橙實驗室 HR Lab."],["B",[17,18],"驕傲香蕉"],["B",[19],"Hashira 十四"],["B",[20],"本本力學實驗室"],["B",[21,22],"夏天久一點"],["B",[23],"超斬開"],["B",[24],"紳士的秘密基地"],["B",[25],"千夏 - 千年夏憶-"],["B",[26],"Karen"],["B",[27],"Awan"],["B",[28],"F.W.ZHolic"],["B",[29],"超級米漿"],["B",[30],"千仞蘭庭"],["B",[31,32],"SHINING"],["B",[33],"URAN-FACTORY"],["B",[34],"快樂罌粟花自耕農會"],["B",[35,36],"花屋創意 (花屋 la fleur)"],["B",[37,38],"毛毛創森坊"],["B",[39],"小白鹿 WHITE DEER"],["B",[40],"EMO 個人"],["B",[41],"阿里阿巴巴阿千千"],["B",[42],"大阪風男"],["B",[43,44],"猛少女之拳"],["C",[1,2],"蟲蟲商號"],["C",[3,4],"一輩子少女樂團"],["C",[5,6],"星花火"],["C",[7,8],"格里芬故事屋"],["C",[9,10],"獸耳麵包"],["C",[11,12],"規尬的書店"],["C",[13],"六太日日人"],["C",[14],"幼彩社"],["C",[15],"稚稚丸"],["C",[16],"やまぐちぷりんと"],["C",[17],"ざしきねこ"],["C",[18],"Delayder"],["C",[19],"宇宙波神山崎本社"],["C",[20],"有害蕈類集會所"],["C",[21,22],"Rabbit Candy"],["C",[23,24],"早安柴之美"],["C",[25,26],"麒麟的快樂繪圖之家"],["C",[27,28],"大江戶外萌"],["C",[29],"DeityMark"],["C",[30],"粗線條工房"],["C",[31],"阿嵐章魚繪圖手作舖"],["C",[32],"Uniautomata Studio"],["C",[33],"影文庫計畫"],["C",[34],"亞瑪吉大肥羊"],["C",[35],"小島伊織"],["C",[36],"蚩尤"],["C",[37,38],"鬍子的美人茗茶"],["C",[39,40],"肉腿本舖 NARU"],["C",[41,42],"bbibinbing"],["C",[43,44],"大幼蟲"],["D",[1],"女巫之骰"],["D",[2],"超級同人大戰"],["D",[3],"殘業 TONIGHT"],["D",[4],"周休二日"],["D",[5,6],"仙界大濕快樂攤"],["D",[7,8],"RongChuhan 榮初涵"],["D",[9],"艾茵莉思&毛毛丫"],["D",[10],"芭嘎 nono 阿芭芭♕"],["D",[11],"PoiLiang"],["D",[12],"岸間晴乃のイラストテンジ"],["D",[13,14],"格爾迪恩的芙拉爾"],["D",[15,16],"甜珍珠"],["D",[17,18],"74 Production"],["D",[19],"烏冬傳說"],["D",[20],"大概是…夭謬？"],["D",[21,22],"大波斯菊花園"],["D",[23,24],"哈魯醬"],["D",[25],"Jasonz Artwork"],["D",[26],"fu 富"],["D",[27],"和製雪景"],["D",[28],"ブラック・クラッシャー"],["D",[29],"夏至日 NATSUHI"],["D",[30],"方塊 Bokkusu"],["D",[31,32],"歸宅本部"],["D",[33,34],"羊駝怪人與陳家胖雞"],["D",[35],"SCIFASAURUS(海穹文化)"],["D",[36],"寒武紀化石"],["D",[37],"咖哩東"],["D",[38],"ACG 動漫迷的秘密會社"],["D",[39,40],"LSS 的機械陣地"],["D",[41,42],"UAV 實驗室"],["D",[43,44],"景美仙姬巖"],["M",[1,2],"尼腓工作室"],["M",[3],"龍龍小舖"],["M",[4],"青雨閣"],["M",[5],"Takodoko"],["M",[6],"Hanasawa 花澤"],["M",[7],"Xamu ArtWorks"],["M",[8],"七叔神社"],["M",[9,10],"Kakela*Hane"],["M",[11],"隨意坊"],["M",[12],"骨頭蹦"],["M",[13,14],"筑波的快樂輻射森林"],["M",[15],"魔法燒酒"],["M",[16],"華麗謝幕"],["M",[17,18],"奈櫻工坊"],["M",[19],"Arrow Workshop"],["M",[20],"ArnebWorks"],["M",[21],"Kuro Kanin"],["M",[22],"Yutakako 裕子"],["M",[23,24],"さかな公園"],["M",[25,26],"弾 KAIOU"],["M",[27,28],"萌夜茶会"],["M",[29],"心動大鳥團"],["M",[30],"遜咖歡樂屋"],["M",[31],"不要碰我的狗"],["M",[32],"NephiAnime"],["M",[33],"Ellie 工作坊"],["M",[35],"鳩 DEVIL 部"],["M",[36],"404 便利通販"],["M",[37],"VCCC"],["M",[38],"興趣始燃"],["M",[39,40],"奶油湯匙"],["M",[41,42],"箱庭交響曲"],["M",[43,44],"待援生活"],["M",[45],"NNK777"],["M",[46],"河狸 Biba"],["M",[47,48],"RoyBoy 羅蔔坑"],["N",[1,2],"小律 Ritsu"],["N",[3,4],"燼璃 JinLi"],["N",[5,6],"牛牛 Niu"],["N",[7,8],"Nao Cosplay"],["N",[9,10],"信撒旦得永生"],["N",[11,12],"TENxYAU 姐妹丼"],["N",[13,14],"阿奈 Yuuna."],["N",[15,16],"艾青的眾青平身"],["N",[17,18],"星喵 Aastaneko"],["N",[19,20],"紅葉 Momiko"],["N",[21,22],"教皇和牛專賣工作室"],["N",[23,24],"醉宮 Yomiya"],["N",[25,26],"伶伶 Linnng"],["N",[27,28],"汪汪 Won Cosplay"],["N",[29,30],"月宮櫻 Tsukimiya Sakura"],["N",[31,32],"Annie Meow 凜花花"],["N",[33,34],"0 蛋黃女子由奈 0"],["N",[35,36],"結 Yui ゆい"],["N",[37,38],"小漾樣 x 樣樣子"],["N",[39,40],"Tiffany 小豬舍"],["N",[41],"四巫日 Momihi cos"],["N",[42],"飲料只喝鮮奶茶"],["N",[43,44],"千島 Chishima"],["N",[45,46],"咖啡 cosplay"],["N",[47,48],"♡可凡 kofan0331"],["O",[1,2],"HattieCosplay"],["O",[3],"Shiori cosplay"],["O",[4],"夏艾有擺攤"],["O",[5,6],"菈小菈本人"],["O",[7,8],"哺哺鼻鼻蓓蓓"],["O",[9,10],"昀 Yun cos&photo"],["O",[11,12],"樂褆超可愛"],["O",[13],"瑞紗 Coresa"],["O",[14],"錦燈 Akari"],["O",[15,16],"光 Guang Cosplay"],["O",[17,18],"兔兔蟲 cosplay"],["O",[19],"曉愛今天有擺攤"],["O",[20],"杯主委加碼"],["O",[21,22],"朵莉 Tori"],["O",[23,24],"AKANE Cosplay"],["O",[25,26],"玄子 Genko"],["O",[27,28],"七七小姐_Miss Seven"],["O",[29],"阿慧社"],["O",[30],"白飯飯 fannn"],["O",[31,32],"貓草 DAMA"],["O",[33],"Kazeki 風希"],["O",[34,35],"最強斂財者"],["O",[36],"音符 ONPU"],["O",[37],"桂優 Katsurayu"],["O",[38],"小羊/풍신 Kohitsuji_Pungsin"],["O",[39,40],"黎黎寧寧"],["O",[41,42],"米浮 mifu"],["O",[43],"AKA 鞠-Cosplay"],["O",[44,45],"Meiko です"],["O",[46],"容子"],["O",[47,48],"#DREAMProject [JooA Cosplay]"],["P",[1,2],"Helene 海琳"],["P",[3,4],"野人文庫"],["P",[5,6],"超次元美少女 ARISA"],["P",[7,8],"鮭魚要吃生的"],["P",[9,10],"泥泥汝"],["P",[11,12],"泥泥汝的魔法學院"],["P",[13,14],"小冷 leng"],["P",[15],"Ayami x Yaki"],["P",[16],"逆時空三次元"],["P",[17,18],"COSMIX#4th"],["P",[19,20],"COSMIX#3rd"],["P",[21,22],"COSMIX#2nd"],["P",[23,24],"COSMIX#1st"],["P",[25,26],"壯哉我大佞總"],["P",[27,28],"紀奈奈 Hatori Sama"],["P",[29,30],"霸氣是隻貓"],["P",[31,32],"一個簡單的黛黛"],["P",[33,34],"塔可喵喵教 TakoNeko"],["P",[35,36],"Project Cosplay"],["P",[37,38],"百合吉娃娃"],["P",[39,40],"餘曦 YuHsi"],["P",[41],"丁丁 dingding"],["P",[42],"小貓奈奈的鍊金工坊"],["P",[43],"Yuzuki Lily"],["P",[44],"三喬主公"],["P",[45,46],"Tee"],["P",[47,48],"餓小璇 Miu"],["Q",[1,2],"TRY&方言二人社会"],["Q",[3],"世界樹圖書館"],["Q",[4],"葛西的腐敗西瓜園"],["Q",[5],"冷水青蛙鍋"],["Q",[7],"貓專用牛乳"],["Q",[8],"好緊先生"],["Q",[9],"shishi 不是 TT"],["Q",[10],"Prediction"],["Q",[11,12],"大慶集團"],["Q",[13,14],"J Studio 模型工坊"],["Q",[15],"被世界遺忘 X 火腿泡芙"],["Q",[16],"狂気のウサギ"],["Q",[17,18],"Monster Build"],["Q",[19,20],"Bebop Design"],["Q",[21,22],"廷 a 理工御宅"],["Q",[23],"Monster Hero"],["Q",[24],"怪獸箱_monsterbox"],["Q",[25,26],"Hsun Craft Studio"],["Q",[27,28,29],"Marvix.F Model Studio"],["Q",[30,31,32,33],"R-one studio"],["Q",[34,35,36],"箱龜盒子"],["Q",[37],"狂想風珀"],["Q",[38],"八爪魚雕塑"],["Q",[39],"平行世界 - 二胡實驗室"],["Q",[40],"二色幽紫蝶"],["Q",[41,42],"森林裡有熊窩"],["Q",[43],"實體化技師團"],["Q",[44],"Fikushon 虛構社"],["Q",[45,46],"イレブンナイン"],["Q",[47,48],"FuwaFuwa 軟趴趴"],["R",[1],"沒川狼雨"],["R",[2],"擬現工坊"],["R",[3,4],"夢工廠模型公仔工作室"],["R",[5,6],"帝辛引力模型工作室"],["R",[7],"彫民"],["R",[8],"杉貓"],["R",[9,10],"有貓氏陶"],["R",[11,12],"Ah-Wei"],["R",[13,14],"呼嚕呼嚕溫蒂"],["R",[15,16],"膠愛模型工作室"],["R",[17,18],"大葉多媒體"],["R",[19,20],"臺灣動漫模型產學協會"],["R",[21],"Evilwaystudio"],["R",[22],"Mushi Bros Toys"],["R",[23,24],"角落工作室"],["R",[25],"肉球不加蛋"],["R",[26],"Jerry 創作工作室"],["R",[27,28],"臨時工作室"],["R",[29],"安迪"],["R",[30],"異星玩具"],["R",[31],"Dice Knight"],["R",[32],"三線鼠工作室"],["R",[33,34],"KH MODEL STUDIO"],["R",[35,36],"ToyPalace"],["R",[37,38],"Neiba Design"],["R",[39],"手作休息室"],["R",[40],"天之火"],["R",[41],"彥子彥子"],["R",[42],"one one collection"],["R",[43],"十年一件_A 君"],["R",[44],"阿丹貓模型工作室"],["R",[45,46],"模型幻想"],["R",[47,48],"九五二漆"],["S",[1,2,3,4],"模型 DNA"],["S",[5,6],"德國 MOZART 大紅刀"],["S",[7],"白色木馬號工作室"],["S",[8],"GothiCraftI"],["S",[9],"J 個怪獸模型公仔工作室"],["S",[10],"EWA STUDIO / 東西像工作室"],["S",[11,12],"大罪妖精記"],["S",[13,14],"艾力克斯匠 alexspace54"],["S",[15,16],"灰島工作室"],["S",[17,18],"赤森工作室"],["S",[19,20,21],"Noah’s Crate Studio"],["S",[22,23,24],"大腹工作室"],["S",[25,26],"水泊白鹿"],["S",[27],"甜酒/sweetwine"],["S",[28],"ZFUNKY"],["S",[29,30],"UZ STUDIO"],["S",[31],"ANRS Project"],["S",[32],"峰巢工作室"],["S",[33,34],"R 匠研究工坊"],["S",[35,36],"sugarcrowns"],["S",[37,38],"台灣模型嗜好發展協會"],["S",[39,40],"泉源 studio"],["S",[41,42],"TANgent"],["S",[43],"咲笑工作室"],["S",[44],"卡卡修的雜物工房"],["S",[45,46],"某王城模型工作室"],["S",[47,48],"MTS 軍模館"],["T",[13],"petpark studio"],["T",[14],"芄妹的美食小世界"],["T",[15],"崗哨工作室 Guard Post Studio"],["T",[16],"魔亞方舟戰棋專賣店"],["T",[17,18],"Tazo 工坊"],["T",[19,20],"色繪團結工聯"],["T",[21],"洗筆洗到咖啡杯"],["T",[22],"MAGICSTAR"],["T",[23,24],"conscious8th"],["T",[25,26],"G&K modeling"],["T",[27,28],"女巫寶盒"],["T",[29,30],"TwelveStudios"],["T",[31],"營養口糧兵工廠"],["T",[32],"模型山林有一村"],["T",[33],"MacStudio"],["T",[34],"休日工房く"],["T",[35],"紙作物 OrgaPaper"],["T",[36],"Azure 鳥紙狂想"],["W",[1,2],"三色坊"],["W",[3,4],"助客勃"],["W",[5,6],"Atelier Kingyo(金魚工房)"],["W",[7],"Haku Works"],["W",[8],"赤瞳不是紅色眼睛"],["W",[9,10],"UNLOLI"],["W",[11,12],"REI’s ROOM"],["W",[13,14],"coneco.Y. (洋食小貓)"],["W",[15,16],"Bubble Wave"],["W",[17,18],"BsWs 黑星白星"],["W",[19,20],"蒼銀之星"],["W",[21,22],"Bygin-白巾"],["W",[23,24],"Catity cosplay"],["W",[25,26],"雨波 HaneAme"]],"d2":[["A",[1,2],"杏。Xing"],["A",[3,4],"Hosto"],["A",[5],"打牌萌"],["A",[6],"稻禾工作室"],["A",[7],"夢靈虎居"],["A",[9],"月面基地"],["A",[10],"桑尤姆的部屋"],["A",[11],"萌妹子前線"],["A",[12],"南方山竹筍"],["A",[13,14],"包子部屋&大磨界+GIO"],["A",[15],"俺企鵝"],["A",[16],"鉛筆盒"],["A",[17],"剩菜剩飯"],["A",[18],"Lycoris Garden"],["A",[19,20],"正經同人"],["A",[21,22],"月貓創意"],["A",[23,24],"空想工房．Reverie Studio"],["A",[25,26],"雷光刻幻"],["A",[27,28],"塗鴉星狐窩"],["A",[29],"Ya 喵子的貓窩"],["A",[30],"手創館"],["A",[31,32],"異私特"],["A",[33,34],"日落之旅藥水舖"],["A",[35,36],"Edge Three"],["A",[37,38],"ZAP 製造所"],["A",[39,40],"織名作家"],["A",[41,42],"眾惡堂工坊"],["A",[43,44],"琉璃茉莉 原創設計"],["B",[1,2],"【好運狐狸】"],["B",[3],"藍胖肥龍"],["B",[4],"新夭 Brainholesky"],["B",[5,6],"賽路伊斯 - 七曜個人"],["B",[7,8],"烯醇 enol"],["B",[10],"宇宙垃圾"],["B",[11,12],"My Garden 我的庭園（羊毛氈手作坊）"],["B",[13],"Jingle Deer Studio"],["B",[14],"星之軒"],["B",[15],"P2Konoha"],["B",[16],"風橙實驗室 HR Lab."],["B",[17,18],"驕傲香蕉"],["B",[19],"Hashira 十四"],["B",[20],"本本力學實驗室"],["B",[21,22],"夏天久一點"],["B",[23],"超斬開"],["B",[24],"紳士的秘密基地"],["B",[25],"千夏 - 千年夏憶-"],["B",[26],"Karen"],["B",[27],"Awan"],["B",[28],"F.W.ZHolic"],["B",[29],"超級米漿"],["B",[30],"URAN-FACTORY"],["B",[31,32],"SHINING"],["B",[33],"秋奈-AKINA"],["B",[34],"快樂罌粟花自耕農會"],["B",[35,36],"花屋創意 (花屋 la fleur)"],["B",[37,38],"毛毛創森坊"],["B",[39],"小白鹿 WHITE DEER"],["B",[40],"EMO 個人"],["B",[41],"阿里阿巴巴阿千千"],["B",[42],"大阪風男"],["B",[43,44],"OriginZero"],["C",[1,2],"蟲蟲商號"],["C",[3,4],"一輩子少女樂團"],["C",[5,6],"星花火"],["C",[7,8],"格里芬故事屋"],["C",[9,10],"獸耳麵包"],["C",[11,12],"規尬的書店"],["C",[13],"六太日日人"],["C",[14],"幼彩社"],["C",[15],"稚稚丸"],["C",[16],"やまぐちぷりんと"],["C",[17],"ざしきねこ"],["C",[18],"Delayder"],["C",[19],"宇宙波神山崎本社"],["C",[20],"有害蕈類集會所"],["C",[21,22],"Rabbit Candy"],["C",[23],"howu 好油聚集地"],["C",[24],"早安柴之美"],["C",[25,26],"麒麟的快樂繪圖之家"],["C",[27,28],"大江戶外萌"],["C",[29],"DeityMark"],["C",[30],"粗線條工房"],["C",[31],"阿嵐章魚繪圖手作舖"],["C",[32],"Yun 屋"],["C",[33],"影文庫計畫"],["C",[34],"亞瑪吉大肥羊"],["C",[35],"小島伊織"],["C",[36],"蚩尤"],["C",[37,38],"鬍子的美人茗茶"],["C",[39,40],"肉腿本舖 NARU"],["C",[41,42],"bbibinbing"],["C",[43,44],"大幼蟲"],["D",[1],"女巫之骰"],["D",[2],"超級同人大戰"],["D",[3],"殘業 TONIGHT"],["D",[4],"周休二日"],["D",[5,6],"仙界大濕快樂攤"],["D",[7],"IVY"],["D",[8],"狗兒 Ruka"],["D",[9],"艾茵莉思&毛毛丫"],["D",[10],"芭嘎 nono 阿芭芭♕"],["D",[11],"PoiLiang"],["D",[12],"岸間晴乃のイラストテンジ"],["D",[13,14],"格爾迪恩的芙拉爾"],["D",[15,16],"甜珍珠"],["D",[17,18],"74 Production"],["D",[19],"烏冬傳說"],["D",[20],"大概是…夭謬？"],["D",[21,22],"大波斯菊花園"],["D",[23,24],"哈魯醬"],["D",[25],"Jasonz Artwork"],["D",[26],"fu 富"],["D",[27],"和製雪景"],["D",[28],"ブラック・クラッシャー"],["D",[29],"夏至日 NATSUHI"],["D",[30],"方塊 Bokkusu"],["D",[31,32],"歸宅本部"],["D",[33,34],"羊駝怪人與陳家胖雞"],["D",[35],"SCIFASAURUS(海穹文化)"],["D",[36],"寒武紀化石"],["D",[37],"咖哩東"],["D",[38],"ACG 動漫迷的秘密會社"],["D",[39,40],"LSS 的機械陣地"],["D",[41],"幻想布萊梅"],["D",[42],"UAV 實驗室"],["D",[43,44],"景美仙姬巖"],["M",[1,2],"尼腓工作室"],["M",[3],"龍龍小舖"],["M",[4],"青雨閣"],["M",[5,6],"Varlyn 琳"],["M",[7],"青葉工房"],["M",[8],"Xamu ArtWorks"],["M",[9],"Hanasawa 花澤"],["M",[10],"Takodoko"],["M",[11],"隨意坊"],["M",[12],"骨頭蹦"],["M",[13,14],"筑波的快樂輻射森林"],["M",[15],"魔法燒酒"],["M",[16],"華麗謝幕"],["M",[17,18],"奈櫻工坊"],["M",[19],"Arrow Workshop"],["M",[20],"ArnebWorks"],["M",[21],"Kuro Kanin"],["M",[22],"Yutakako 裕子"],["M",[23,24],"さかな公園"],["M",[25,26],"弾 KAIOU"],["M",[27,28],"萌夜茶会"],["M",[29],"心動大鳥團"],["M",[30],"遜咖歡樂屋"],["M",[31],"不要碰我的狗"],["M",[32],"NephiAnime"],["M",[33],"Ellie 工作坊"],["M",[34],"吉喵熊熊"],["M",[35],"鳩 DEVIL 部"],["M",[36],"404 便利通販"],["M",[37],"VCCC"],["M",[38],"興趣始燃"],["M",[39,40],"奶油湯匙"],["M",[41,42],"箱庭交響曲"],["M",[43,44],"待援生活"],["M",[45],"NNK777"],["M",[46],"河狸 Biba"],["M",[47,48],"RoyBoy 羅蔔坑"],["N",[1,2],"小律 Ritsu"],["N",[3,4],"燼璃 JinLi"],["N",[5,6],"牛牛 Niu"],["N",[7,8],"Nao Cosplay"],["N",[9,10],"信撒旦得永生"],["N",[11,12],"TENxYAU 姐妹丼"],["N",[13,14],"阿奈 Yuuna."],["N",[15,16],"艾青的眾青平身"],["N",[17,18],"星喵 Aastaneko"],["N",[19,20],"紅葉 Momiko"],["N",[21,22],"教皇和牛專賣工作室"],["N",[23,24],"醉宮 Yomiya"],["N",[25,26],"紫絃 SHIZURU"],["N",[27,28],"小艾"],["N",[29,30],"月宮櫻 Tsukimiya Sakura"],["N",[31,32],"Annie Meow 凜花花"],["N",[33,34],"0 蛋黃女子由奈 0"],["N",[35,36],"結 Yui ゆい"],["N",[38],"小朵 time"],["N",[39,40],"Tiffany 小豬舍"],["N",[41],"四巫日 Momihi cos"],["N",[42],"飲料只喝鮮奶茶"],["N",[43,44],"千島 Chishima"],["N",[45,46],"咖啡 cosplay"],["N",[47,48],"♡可凡 kofan0331"],["O",[1,2],"HattieCosplay"],["O",[3],"Shiori cosplay"],["O",[4],"夏艾有擺攤"],["O",[5,6],"菈小菈本人"],["O",[7,8],"哺哺鼻鼻蓓蓓"],["O",[9,10],"昀 Yun cos&photo"],["O",[11,12],"樂褆超可愛"],["O",[13],"瑞紗 Coresa"],["O",[14],"錦燈 Akari"],["O",[15,16],"光 Guang Cosplay"],["O",[17,18],"兔兔蟲 cosplay"],["O",[19],"曉愛今天有擺攤"],["O",[20],"杯主委加碼"],["O",[21,22],"朵莉 Tori"],["O",[23,24],"MIYANA 咪呀"],["O",[25,26],"玄子 Genko"],["O",[27,28],"七七小姐_Miss Seven"],["O",[29],"阿慧社"],["O",[30],"白飯飯 fannn"],["O",[31,32],"貓草 DAMA"],["O",[33],"Kazeki 風希"],["O",[34],"最強斂財者"],["O",[36],"音符 ONPU"],["O",[37],"桂優 Katsurayu"],["O",[38],"小羊/풍신 Kohitsuji_Pungsin"],["O",[39,40],"黎黎寧寧"],["O",[41,42],"米浮 mifu"],["O",[43],"AKA 鞠-Cosplay"],["O",[44],"斂財海豹 枳枳 ZHIZIH"],["O",[45],"Meiko です"],["O",[46],"容子"],["O",[47,48],"#DREAMProject [JooA Cosplay]"],["P",[1,2],"Helene 海琳"],["P",[3,4],"野人文庫"],["P",[5,6],"超次元美少女 ARISA"],["P",[7,8],"鮭魚要吃生的"],["P",[9,10],"泥泥汝"],["P",[11,12],"泥泥汝的魔法學院"],["P",[13,14],"小冷 leng"],["P",[15],"Ayami x Yaki"],["P",[16],"逆時空三次元"],["P",[17,18],"COSMIX#4th"],["P",[19,20],"COSMIX#3rd"],["P",[21,22],"COSMIX#2nd"],["P",[23,24],"COSMIX#1st"],["P",[25,26],"壯哉我大佞總"],["P",[27,28],"紀奈奈 Hatori Sama"],["P",[29,30],"霸氣是隻貓"],["P",[31,32],"一個簡單的黛黛"],["P",[33,34],"塔可喵喵教 TakoNeko"],["P",[35,36],"Project Cosplay"],["P",[37,38],"百合吉娃娃"],["P",[39,40],"餘曦 YuHsi"],["P",[41],"丁丁 dingding"],["P",[42],"小貓奈奈的鍊金工坊"],["P",[43],"Yuzuki Lily"],["P",[44],"三喬主公"],["P",[45,46],"Tee"],["P",[47,48],"餓小璇 Miu"],["Q",[13,14],"J Studio 模型工坊"],["Q",[15],"被世界遺忘 X 火腿泡芙"],["Q",[16],"狂気のウサギ"],["Q",[17,18],"魔星工作室"],["Q",[19,20],"Bebop Design"],["Q",[21,22],"廷 a 理工御宅"],["Q",[23],"Monster Hero"],["Q",[24],"怪獸箱_monsterbox"],["Q",[25,26],"Hsun Craft Studio"],["Q",[27,28,29],"Marvix.F Model Studio"],["Q",[30,31,32,33],"R-one studio"],["Q",[34,35,36],"箱龜盒子"],["R",[1],"沒川狼雨"],["R",[2],"擬現工坊"],["R",[3,4],"夢工廠模型公仔工作室"],["R",[5,6],"帝辛引力模型工作室"],["R",[7],"彫民"],["R",[8],"杉貓"],["R",[9,10],"有貓氏陶"],["R",[11,12],"Ah-Wei"],["R",[13,14],"呼嚕呼嚕溫蒂"],["R",[15,16],"膠愛模型工作室"],["R",[17,18],"大葉多媒體"],["R",[19,20],"臺灣動漫模型產學協會"],["R",[21],"Evilwaystudio"],["R",[22],"Mushi Bros Toys"],["R",[23,24],"角落工作室"],["R",[25],"肉球不加蛋"],["R",[26],"Jerry 創作工作室"],["R",[27,28],"臨時工作室"],["R",[29],"安迪"],["R",[30],"異星玩具"],["R",[31],"Dice Knight"],["R",[32],"三線鼠工作室"],["R",[33,34],"KH MODEL STUDIO"],["R",[35,36],"ToyPalace"],["R",[37,38],"Neiba Design"],["R",[39],"手作休息室"],["R",[40],"David’s Studio"],["R",[41],"彥子彥子"],["R",[42],"one one collection"],["R",[43],"十年一件_A 君"],["R",[44],"阿丹貓模型工作室"],["R",[45,46],"模型幻想"],["R",[47,48],"九五二漆"],["S",[1,2,3,4],"模型 DNA"],["S",[5,6],"德國 MOZART 大紅刀"],["S",[7],"白色木馬號工作室"],["S",[8],"GothiCraftI"],["S",[9],"J 個怪獸模型公仔工作室"],["S",[10],"EWA STUDIO / 東西像工作室"],["S",[11,12],"大罪妖精記"],["S",[13,14],"艾力克斯匠 alexspace54"],["S",[15,16],"灰島工作室"],["S",[17,18],"赤森工作室"],["S",[19,20,21],"Noah’s Crate Studio"],["S",[22,23,24],"大腹工作室"],["S",[25,26],"水泊白鹿"],["S",[27],"甜酒/sweetwine"],["S",[28],"ZFUNKY"],["S",[29,30],"UZ STUDIO"],["S",[31],"ANRS Project"],["S",[32],"峰巢工作室"],["S",[33,34],"R 匠研究工坊"],["S",[35,36],"sugarcrowns"],["S",[37,38],"台灣模型嗜好發展協會"],["S",[39,40],"泉源 studio"],["S",[41,42],"TANgent"],["S",[43],"咲笑工作室"],["S",[44],"卡卡修的雜物工房"],["S",[45,46],"某王城模型工作室"],["S",[47,48],"MTS 軍模館"],["T",[13],"petpark studio"],["T",[14],"芄妹的美食小世界"],["T",[15],"崗哨工作室 Guard Post Studio"],["T",[16],"魔亞方舟戰棋專賣店"],["T",[17,18],"Tazo 工坊"],["T",[19,20],"色繪團結工聯"],["T",[21],"洗筆洗到咖啡杯"],["T",[22],"MAGICSTAR"],["T",[23,24],"conscious8th"],["T",[25,26],"G&K modeling"],["T",[27,28],"女巫寶盒"],["T",[29,30],"TwelveStudios"],["T",[31],"營養口糧兵工廠"],["T",[32],"模型山林有一村"],["T",[33],"MacStudio"],["T",[34],"休日工房く"],["T",[35],"紙作物 OrgaPaper"],["T",[36],"Azure 鳥紙狂想"],["W",[1,2],"三色坊"],["W",[3,4],"助客勃"],["W",[5,6],"Atelier Kingyo(金魚工房)"],["W",[7],"Haku Works"],["W",[8],"赤瞳不是紅色眼睛"],["W",[9,10],"UNLOLI"],["W",[11,12],"REI’s ROOM"],["W",[13,14],"coneco.Y. (洋食小貓)"],["W",[15,16],"Bubble Wave"],["W",[17,18],"BsWs 黑星白星"],["W",[19,20],"蒼銀之星"],["W",[21,22],"Bygin-白巾"],["W",[23,24],"Catity cosplay"],["W",[25,26],"雨波 HaneAme"]]};
 const DAYS = {d1:{label:'首日', date:'11/07（六）', full:'首日 11/07（六）'}, d2:{label:'次日', date:'11/08（日）', full:'次日 11/08（日）'}};
 const PARTIAL = {d1:{T:['模型','green']}, d2:{T:['模型','green'], Q:['鋼普拉素組體驗','orange']}};
 const GROUP = {A:'g1',B:'g1',C:'g1',D:'g1',M:'g2',N:'g3',O:'g3',P:'g3',Q:'g4',R:'g4',S:'g4',T:'g4',W:'g5'};
@@ -207,21 +247,63 @@ const pad = n => String(n).padStart(2,'0');
 const norm = s => s.normalize('NFKC').toLowerCase().replace(/[\s　・．。·]/g,'');
 const label = e => e.n.length===1 ? e.L+pad(e.n[0]) : e.L+pad(e.n[0])+'–'+pad(e.n[e.n.length-1]);
 
+// ---- extra (non-PF-table) searchable spots, same both days ----
+const EXTRA=[]; const EXK={};
+function addX(key, name, label, codes, grp, area, L){ EXK[key]=EXTRA.length; EXTRA.push({key, name, label, codes, grp, area, L:L||''}); }
+
+// 開拓模型祭 14 strips: [letter, label side, cell colours 1→N (b tan / u blue / w white), text tone, [[name, pos]...]]
+const RF_STRIPS=[
+ ['A','L','bwbwwwwwbbb','tb',[['FREEDOM',10],['MAD',6],['DETAIL UP MANIA',3],['TORI FACTORY',2],['HS MODEL',1]]],
+ ['B','R','wwbwwwwwbbb','tb',[['FREEDOM',10],['MAD',6.5],['漢將模型',3],['G.I OPS',1.5]]],
+ ['C','L','uuuuwwwwwww','tt',[['KAHA',10.5],['SCIENTIFIC MODELS',9.5],['NEKO GALAXY',8],['左手工坊',7],['NUTSHELL',6],['HEX',5],['小人研究室',2.5]]],
+ ['D','R','uuwuwuwwwuw','tt',[['庫兵客',11],['東方製作所',10],['AIR BEAST',8.5],['WEIRDO MODELS',6],['KASL',5],['飛行員之家',3.5],['III 迪美',3],['ISAM',1.5]]],
+ ['E','L','bbbwbwwbwww','tb',[['HRS 瞄匠',10],['伽利略',8],['模型綠洲',6.5],['賈斯汀模玩改',5],['ONE SCALE PROJECT',4],['GIC',2]]],
+ ['F','R','bbbwwbwbbww','tb',[['HRS 瞄匠',10.5],['夜之工坊',8.5],['SIAM DECAL',7],['月桂樹工作坊',6],['巨魔派對',4.5],['GIC',2]]],
+ ['G','L','wuwwuu','tt',[['向上委員會',5.5],['BITS',3.5],['沐川國際',2],['特二電影道具部',1]]],
+ ['H','R','uuuwuw','tt',[['FUNTEC',6],['熱血模型',5],['方摯工作室',4],['952 漆',2]]],
+];
+for(const [L,,,,tags] of RF_STRIPS){
+  for(const [name,p] of tags){
+    const nums = p%1 ? [Math.floor(p),Math.ceil(p)] : [p];
+    const lab = '模'+L+nums.map(pad).join('/');
+    const codes=[]; nums.forEach(n=>{ const c=(L+pad(n)).toLowerCase(); codes.push(c,'模'+c,'rf'+c); });
+    addX(`rf:${L}:${p}`, name, lab, codes, 'g6', `開拓模型祭 ${L} 排（${nums.join('/')} 號旁）`, L);
+  }
+}
+const RF_WALL_TAGS=[['北回',2,3],['MODO',4,5],['DENSEI AIR',7,8],['世穎實業',9,12],['EGB',13,14],['中鐳',15,16]];
+RF_WALL_TAGS.forEach(([n,a,b])=>addX('rfw:'+n, n, `模沿牆${a}–${b}`, ['沿牆'+a,'沿牆'+b], 'g6', `開拓模型祭 沿牆 ${a}–${b} 號`));
+const RF_LEFT=[['風動',1],['達模院',0],['達模院',0],['抽獎區',1],['媒體區',0]];
+RF_LEFT.forEach(([n],k)=>addX('rfl:'+k, n, '模左牆', [], 'g6', '開拓模型祭 左側靠牆'));
+addX('rf:proto','原型賽','模原型賽',[],'g6','開拓模型祭 G/H 排上方');
+addX('rf:comp','模型海外公開賽比賽區','模比賽區',[],'g6','開拓模型祭 左側大區（第 10 屆台灣國際模型公開賽）');
+const CORP=[['普羅森','Tower Hill'],['榮昌巴哥文創有限公司','ONE STEP UP'],['軍事連線','ONE STEP UP'],['漢翔文創','Sparmax'],['國防部文宣處','Sparmax'],['青文創','Sparmax'],['文化總會','開拓']];
+CORP.forEach((r,y)=>r.forEach((n,x)=>addX(`corp:${y}:${x}`, n, '企業', [], 'g0', '企業／機構攤位')));
+const PFWALL=[['森羅御界','綠林寮','星展銀行','金玉選寶會'],['加碼多多','新北市藝文工會','玩聚設計','ALG']];
+PFWALL.forEach((g,y)=>g.forEach((n,x)=>addX(`pfw:${y}:${x}`, n, '靠牆', [], 'g0', '右側靠牆攤位')));
+// upper-left landmarks (PF map coords x 213–770, y 113–420)
+const UL=[
+ ['T\'s system.',507,155,532,183,'sm'],['わんだらー',507,183,532,213,'sm'],
+ ['佐藤飛工作室',408,233,440,265,'sm'],['IDOL ISLAND',440,233,468,265,'sm'],['米粒馬',468,233,500,265,'sm'],
+ ['布啾的工作室',408,300,440,330,'sm'],['MAH',408,330,440,357,'sm'],['赫綵電腦',440,300,500,357,'sm'],
+ ['大象散步',566,140,620,168,'sm'],['BB戰士聯播',666,140,718,168,'sm'],
+ ['總部',270,250,300,308,'gray'],['舞台',273,325,330,390,'yellow'],
+ ['模型',557,178,587,284,'green'],['模型',610,178,640,284,'green'],
+ ['萬代玩具',553,300,640,388,'big'],['玩具市集',666,178,694,388,'orange'],['玩具市集',720,178,748,388,'orange'],
+];
+UL.forEach((u,k)=>addX('ul:'+k, u[0], '左上', [], 'g0', '館內左上區'));
+
 // ---- prepare entries ----
+const AREA_PF = L => L==='W' ? 'W 排（上方靠牆）' : L+' 區';
 const DB = {};
 for (const d of ['d1','d2']) {
-  const list = DATA[d].map((r,i)=>{ const e={i, L:r[0], n:r[1], name:r[2]}; e.label=label(e); e.key=e.L+pad(e.n[0]);
-    e.nn=norm(e.name); e.codes=e.n.map(x=>(e.L+pad(x)).toLowerCase()); return e; });
-  const at = {}; list.forEach(e=>e.n.forEach(x=>at[e.L+x]=e));
-  DB[d] = {list, at};
+  const list = DATA[d].map((r,i)=>{ const e={i, L:r[0], n:r[1], name:r[2], grp:GROUP[r[0]], area:AREA_PF(r[0]), pf:true};
+    e.label=label(e); e.key=e.L+pad(e.n[0]); e.codes=e.n.map(x=>(e.L+pad(x)).toLowerCase()); e.nn=norm(e.name); return e; });
+  const pfLen = list.length;
+  EXTRA.forEach((x,j)=>list.push(Object.assign({}, x, {i:pfLen+j, nn:norm(x.name), n:[]})));
+  const at = {}; list.slice(0,pfLen).forEach(e=>e.n.forEach(x=>at[e.L+x]=e));
+  DB[d] = {list, at, pfLen};
 }
-
-// ---- stars ----
-let stars = {d1:[], d2:[]};
-try { const s = JSON.parse(localStorage.getItem('pf45rf14-stars')||'null'); if (s && s.d1 && s.d2) stars = s; } catch(e){}
-const saveStars = () => { try { localStorage.setItem('pf45rf14-stars', JSON.stringify(stars)); } catch(e){} };
-const isStar = (d,key) => stars[d].includes(key);
-function toggleStar(d,key){ const a=stars[d]; const k=a.indexOf(key); if(k>=0)a.splice(k,1); else a.push(key); saveStars(); refreshStars(); }
+const xi = (d,key) => DB[d].pfLen + EXK[key];
 
 // ---- map builder ----
 const posUpper = n => n<=24 ? [2,25-n] : [1,n-24];
@@ -246,48 +328,117 @@ function column(d, L, lo, hi, posf, rows, extra=''){
   }
   return `<div class="col ${GROUP[L]}"><div class="colhead"><span>${L}</span></div><div class="grid" style="grid-template-rows:repeat(${rows},${ROW_H}px)">${out}${extra}</div></div>`;
 }
+const BOLT = '<svg viewBox="0 0 30 26" width="34" height="30"><path d="M15 1 29 25H1Z" fill="#e03131"/><path d="M16.5 8 11 16h4l-2 6 6-8.5h-4l2-5.5z" fill="#fff"/></svg>';
+
+// 開拓模型祭 panel
+const RF_W=2924, RF_H=64+880+150, LANE=150, CW=52, CELL=80, COMP_X=144, COMP_W=900, STR_X=1084;
+function rfPanel(d){
+  let h='';
+  // head band
+  h+=`<div class="rf-title" style="left:0;top:6px">開拓模型祭 14 · Reality Fantasy 14</div>`;
+  h+=`<div class="rf-desk" style="left:${COMP_X+330}px;top:10px">評審作品桌</div><div class="rf-desk" style="left:${COMP_X+620}px;top:10px">獎牌桌</div>`;
+  // left wall
+  RF_LEFT.forEach(([n,bolt],k)=>{ const top=64+k*176;
+    h+=`<div class="rf-lw" data-i="${xi(d,'rfl:'+k)}" style="left:0;top:${top}px;height:166px">${bolt?BOLT:''}<span>${n}</span></div>`; });
+  // competition area
+  h+=`<div class="rf-comp" data-i="${xi(d,'rf:comp')}" style="left:${COMP_X}px;top:64px;width:${COMP_W}px;height:880px"><div><b>模型海外公開賽<br>比賽區</b><small>第 10 屆台灣國際模型公開賽</small></div></div>`;
+  // strips
+  let x=STR_X; const cellX={};
+  RF_STRIPS.forEach(([L,side,cols,tone,tags],k)=>{
+    const cx = side==='L' ? x+LANE : x; cellX[L]=cx;
+    const N=cols.length;
+    h+=`<div class="rf-letter" style="left:${cx+CW/2}px;top:8px">${L}</div>`;
+    for(let n=1;n<=N;n++){ const c=cols[n-1];
+      h+=`<div class="rf-cell c${c}" style="left:${cx}px;top:${64+(11-n)*CELL}px;width:${CW}px;height:${CELL}px">${n}</div>`; }
+    for(const [name,p] of tags){
+      const top=64+(11-p)*CELL+CELL/2;
+      const st = side==='L' ? `right:${RF_W-cx+8}px;text-align:right` : `left:${cx+CW+8}px`;
+      h+=`<div class="rf-tag ${tone}" data-i="${xi(d,`rf:${L}:${p}`)}" style="${st};top:${top}px">${esc(name)}</div>`;
+    }
+    x += LANE+CW;
+    if(k%2===0){ h+=`<div class="rf-bolt" style="left:${x+5}px;top:${64+(11-(L==='G'?3:5.5))*CELL}px">${BOLT}</div>`; x+=44; }
+    else x+=16;
+  });
+  // 原型賽 block over G/H rows 7–11
+  const px=cellX.G-40, pw=cellX.H+CW-px+10;
+  h+=`<div class="rf-proto" data-i="${xi(d,'rf:proto')}" style="left:${px}px;top:${64+8}px;width:${pw}px;height:${5*CELL-24}px">原型賽</div>`;
+  // bottom wall booths
+  const WY=64+880+46;
+  const groups=[{c:392,items:['v1','2','3','4','5','v6'],pillar:'3',bolt:'4'},{c:802,items:['v7','8']},{c:1037,items:['9','10','11','12'],bolt:'11'},{c:1609,items:['13','v14']},{c:2102,items:['v15','16']}];
+  const boxX={};
+  groups.forEach(g=>{ const w=g.items.reduce((s,it)=>s+(it[0]==='v'?40:64),0); let gx=g.c-w/2;
+    g.items.forEach(it=>{ const v=it[0]==='v', n=v?it.slice(1):it, bw=v?40:64;
+      h+=`<div class="rf-wb${v?' v':''}" style="left:${gx}px;top:${WY}px;width:${bw}px;height:${v?78:38}px">${n}</div>`;
+      boxX[n]=[gx,bw];
+      if(g.pillar===n) h+=`<div class="rf-pillar" style="left:${gx}px;top:${WY+38}px;width:${bw}px"></div>`;
+      if(g.bolt===n) h+=`<div class="rf-bolt" style="left:${gx+bw/2-17}px;top:${WY+44}px;transform:none">${BOLT}</div>`;
+      gx+=bw; }); });
+  [883,1485,2228].forEach(px=>h+=`<div class="rf-pillar" style="left:${px-20}px;top:${WY+38}px;width:40px"></div>`);
+  RF_WALL_TAGS.forEach(([n,a,b])=>{ const l=boxX[a][0], r=boxX[b][0]+boxX[b][1];
+    h+=`<div class="rf-wtag" data-i="${xi(d,'rfw:'+n)}" style="left:${(l+r)/2}px;top:${WY-40}px">${esc(n)}</div>`; });
+  return `<div class="slot rfpanel" style="width:${RF_W}px;height:${RF_H}px">${h}</div>`;
+}
+function ulPanel(d){
+  const kx=RF_W/557, ky=1024/307; let h='';
+  h+=`<div class="ul-out" style="left:0;top:0;width:${(507-213)*kx}px;height:${(233-113)*ky}px">館外</div>`;
+  UL.forEach((u,k)=>{ const [n,x0,y0,x1,y1,cls]=u;
+    const st=`left:${(x0-213)*kx}px;top:${(y0-113)*ky}px;width:${(x1-x0)*kx-6}px;height:${(y1-y0)*ky-6}px`;
+    const di = ` data-i="${xi(d,'ul:'+k)}"`;
+    h+=`<div class="ul ${cls}"${di} style="${st}"><span>${esc(n)}</span></div>`; });
+  return `<div class="slot ulpanel" style="width:${RF_W}px;height:1024px">${h}</div>`;
+}
 function buildMap(d){
   const P=PARTIAL[d];
   const upper=['T','S','R','Q','P','O','N','M'].map(L=>{
     if(P[L]) return column(d,L,13,36,posUpper,24,`<div class="block ${P[L][1]}" style="grid-column:1/span 2;grid-row:13/span 12">${P[L][0]}</div>`);
     return column(d,L,1,48,posUpper,24);
   }).join('');
-  const corp=['普羅森','Tower Hill','榮昌巴哥文創','ONE STEP UP','軍事連線','漢翔文創','Sparmax','國防部文宣處','青文創','文化總會','開拓動漫'];
-  const lower = `<div class="slot"><div class="colhead"></div><div class="lowernote"><div class="arrowL">←</div><div>模型展示<br>開拓盃原型大賽<br>模型廠商專區</div></div></div>`
-    + `<div class="slot"><div class="colhead"><span class="small">企業／機構攤位</span></div><div class="corp">${corp.map(c=>`<div>${c}</div>`).join('')}</div></div>`
+  const corp = `<div class="slot"><div class="colhead"><span class="small">企業／機構攤位</span></div><div class="corp">`
+    + CORP.map((r,y)=>r.map((n,x)=>`<div data-i="${xi(d,`corp:${y}:${x}`)}">${esc(n)}</div>`).join('')).join('') + `</div></div>`;
+  const lower = rfPanel(d) + corp
     + `<div class="slot wide2"><div class="colhead"></div><div class="block orange designer">玩具設計師專區</div></div>`
     + ['D','C','B','A'].map(L=>column(d,L,1,44,posLower,22)).join('');
   const at=DB[d].at, done=new Set(); let w='';
   for(let n=1;n<=26;n++){ if(done.has(n)) continue; const e=at['W'+n];
     if(e){ const c=27-e.n[e.n.length-1]; w+=`<div class="wcell" data-i="${e.i}" style="grid-column:${c}/span ${e.n.length}"><span class="code">${e.label}</span><span class="name">${esc(e.name)}</span></div>`; e.n.forEach(x=>done.add(x)); }
     else { w+=`<div class="wcell" style="grid-column:${27-n};background:#f3f4f6"><span class="code">W${pad(n)}</span></div>`; done.add(n); } }
-  const mainW = SUB_W*16+GAP*7;
+  const pfW = SUB_W*16+GAP*7, OFF = RF_W+GAP, mainW = OFF+pfW;
+  const pfwall = (y)=>PFWALL[y].map((n,x)=>`<div data-i="${xi(d,`pfw:${y}:${x}`)}">${esc(n)}</div>`).join('');
   return `<div class="map" id="map">
-   <div class="mhead"><div><h1>PF45 × RF14　<em>${DAYS[d].label}</em>攤位對照圖</h1>
-     <div class="sub"><span>${DAYS[d].date}</span>花博爭艷館　·　共 ${DB[d].list.length} 個社團</div></div>
-     <div class="how">每格左側為攤位號、右側為社團名　·　灰格＝名單未列<br>每區兩排背對背、依 U 字排號（右排 01 起由下往上）</div></div>
+   <div class="mhead"><div><h1>PF45 × RF14 <em>${DAYS[d].label}</em>攤位對照圖</h1>
+     <div class="sub"><span>${DAYS[d].date}</span>花博爭艷館 · PF ${DB[d].pfLen} 個社團 ＋ 開拓模型祭 14</div></div>
+     <div class="how">每格左側為攤位號、右側為社團名 · 灰格＝名單未列<br>PF 區每區兩排背對背、依 U 字排號（右排 01 起由下往上）<br>左半部「模」＝開拓模型祭區，名稱標在對應號碼旁，依官方圖位置</div></div>
    <div class="hall">
-    <div class="leftnote"><div class="arrowL">←</div><div>往<br>萬代玩具<br>玩具市集<br>模型區<br>舞台・總部<br>比賽區<br>貴賓券入口</div></div>
     <div class="main" style="width:${mainW}px">
-      <div class="wwrap"><div class="wlabel">W</div><div class="wgrid">${w}</div>
+      <div class="wwrap" style="margin-left:${OFF}px"><div class="wlabel">W</div><div class="wgrid">${w}</div>
         <div class="exit" style="left:calc(58px + 14px + (100% - 72px)*18/26)"><div class="exitArrow">↑</div>出口（只出不進）<br><small>開放 10:30–17:00</small></div></div>
-      <div class="row">${upper}</div>
-      <div class="aisle"><span>◀　主　通　道　▶</span></div>
+      <div class="row">${ulPanel(d)}${upper}</div>
+      <div class="aisle"><span>◀ 主 通 道 ▶</span></div>
       <div class="row">${lower}</div>
     </div>
-    <div class="wall"><div class="grp"><div>森羅御界</div><div>綠林寮</div><div>星展銀行</div><div>金玉選寶會</div></div>
-      <div class="cap">（靠牆攤位）</div>
-      <div class="grp"><div>加碼多多</div><div>新北市藝文工會</div><div>玩聚設計</div><div>ALG</div></div></div>
-    <div class="bottom">
-      <div class="door" style="left:${SUB_W*2*0.55}px"><div class="ar">↑</div>一般入口</div>
-      <div class="walltag" style="left:${SUB_W*2*1.5+GAP}px">動漫工會相談室</div>
-      <div class="walltag" style="left:${SUB_W*2*4.5+GAP*4}px">出張編輯部</div>
-      <div class="door" style="left:${SUB_W*2*7.5+GAP*7}px">售票處</div>
+    <div class="wall"><div class="grp">${pfwall(0)}</div><div class="cap">（靠牆攤位）</div><div class="grp">${pfwall(1)}</div></div>
+    <div class="bottom" style="width:${mainW}px">
+      <div class="door" style="left:113px"><div class="ar">↑</div>貴賓／媒體<br><small>廠商／參賽者入場處</small></div>
+      <div class="checkin" style="left:265px">報到處</div>
+      <div class="army" style="left:370px;width:1980px">國軍人才招募＆裝備陳展（館外）</div>
+      <div class="walltag" style="left:${OFF-520}px">職能工會</div>
+      <div class="walltag" style="left:${OFF-330}px">律師諮詢</div>
+      <div class="door" style="left:${OFF-130}px"><div class="ar">↑</div>一般入口<br><small>蓋章處</small></div>
+      <div class="walltag" style="left:${OFF+SUB_W*2*1.5+GAP}px">動漫工會相談室</div>
+      <div class="walltag" style="left:${OFF+SUB_W*2*4.5+GAP*4}px">出張編輯部</div>
+      <div class="door" style="left:${OFF+SUB_W*2*7.5+GAP*7}px">售票處</div>
     </div>
    </div>
-   <div class="mfoot">資料來源：開拓動漫官網〈【PF45 x RF14】${DAYS[d].label}攤位編號〉與${DAYS[d].label}攤位配置圖（2026/09/18 公告）；實際以現場為準。</div>
+   <div class="mfoot">資料來源：開拓動漫官網〈【PF45 x RF14】${DAYS[d].label}攤位編號〉與${DAYS[d].label}攤位配置圖（2026/09/18 公告）；開拓模型祭 14 區依主辦配置圖，兩日相同。實際以現場為準。</div>
   </div>`;
 }
+
+// ---- stars ----
+let stars = {d1:[], d2:[]};
+try { const s = JSON.parse(localStorage.getItem('pf45rf14-stars')||'null'); if (s && s.d1 && s.d2) stars = s; } catch(e){}
+const saveStars = () => { try { localStorage.setItem('pf45rf14-stars', JSON.stringify(stars)); } catch(e){} };
+const isStar = (d,key) => stars[d].includes(key);
+function toggleStar(d,key){ const a=stars[d]; const k=a.indexOf(key); if(k>=0)a.splice(k,1); else a.push(key); saveStars(); refreshStars(); }
 
 // ---- state ----
 let day = 'd1';
@@ -327,9 +478,10 @@ function refreshStars(){
 function search(d, raw){
   const q=norm(raw); if(!q) return [];
   const list=DB[d].list;
-  let m=q.match(/^([a-dm-tw])0*(\d{1,2})$/);
-  if(m){ const code=m[1]+pad(+m[2]); const hit=list.filter(e=>e.codes.includes(code)); if(hit.length) return hit; }
-  if(/^[a-dm-tw]$/.test(q)) return list.filter(e=>e.L.toLowerCase()===q);
+  let m=q.match(/^(模|rf)?([a-hm-tw])0*(\d{1,2})$/);
+  if(m){ const c=m[2]+pad(+m[3]); const hit=list.filter(e=> m[1] ? e.codes.includes('模'+c) : e.codes.includes(c)); if(hit.length) return hit; }
+  m=q.match(/^(模|rf)?([a-hm-tw])$/);
+  if(m){ const L=m[2].toUpperCase(); return list.filter(e=>e.L===L && (m[1] ? !e.pf : true)); }
   return list.filter(e=>e.nn.includes(q) || norm(e.label).includes(q) || e.codes.includes(q));
 }
 function hl(name, raw){
@@ -343,7 +495,7 @@ function hl(name, raw){
 }
 function itemHTML(e, raw){
   const on=isStar(day,e.key);
-  return `<div class="item" data-go="${e.i}"><span class="code c-${GROUP[e.L]}">${e.label}</span><span class="nm">${hl(e.name,raw||'')}</span>`
+  return `<div class="item" data-go="${e.i}"><span class="code c-${e.grp}">${e.label}</span><span class="nm">${hl(e.name,raw||'')}</span>`
        + `<button class="st${on?' on':''}" data-star="${e.i}" aria-label="收藏">${on?'★':'☆'}</button></div>`;
 }
 function clearMarks(){ stage.querySelectorAll('.hit').forEach(el=>el.classList.remove('hit')); $('#map')&&$('#map').classList.remove('q'); }
@@ -355,7 +507,7 @@ function runSearch(keepPanel){
   $('#map').classList.add('q');
   hits.forEach(e=>cellsByI[e.i]&&cellsByI[e.i].classList.add('hit'));
   panel.dataset.mode='search';
-  let h=`<div class="ph"><span>${DAYS[day].full}　找到 ${hits.length} 筆</span></div>`;
+  let h=`<div class="ph"><span>${DAYS[day].full} 找到 ${hits.length} 筆</span></div>`;
   if(hits.length) h+=hits.slice(0,80).map(e=>itemHTML(e,raw)).join('') + (hits.length>80?`<div class="empty-msg">還有 ${hits.length-80} 筆，請輸入更完整的名稱</div>`:'');
   else { const other=day==='d1'?'d2':'d1', oh=search(other, raw).length;
     h+=`<div class="empty-msg">${DAYS[day].label}沒有符合「${esc(raw)}」的社團${oh?`<br><button data-switch="${other}">${DAYS[other].label}有 ${oh} 筆，切換過去看 →</button>`:''}</div>`; }
@@ -365,7 +517,7 @@ function runSearch(keepPanel){
 function showStars(){
   const list=DB[day].list.filter(e=>isStar(day,e.key));
   panel.dataset.mode='stars';
-  let h=`<div class="ph"><span>${DAYS[day].full}　我的收藏 ${list.length} 個</span><button data-closepanel>收起</button></div>`;
+  let h=`<div class="ph"><span>${DAYS[day].full} 我的收藏 ${list.length} 個</span><button data-closepanel>收起</button></div>`;
   h+= list.length ? list.map(e=>itemHTML(e,'')).join('')
       : `<div class="empty-msg">還沒有收藏。<br>點地圖上的攤位或搜尋結果旁的 ☆ 就能加入。</div>`;
   const other=day==='d1'?'d2':'d1';
@@ -392,9 +544,9 @@ function focusEntry(i){
 let sheetI=null;
 function openSheet(i){
   const e=DB[day].list[i]; sheetI=i;
-  const sc=$('#sCode'); sc.textContent=e.label; sc.className='sc c-'+GROUP[e.L];
+  const sc=$('#sCode'); sc.textContent=e.label; sc.className='sc c-'+e.grp;
   $('#sName').textContent=e.name;
-  $('#sDay').textContent=DAYS[day].full+'　·　'+e.L+' 區';
+  $('#sDay').textContent=(e.pf?DAYS[day].full+'　·　':'')+e.area;
   syncSheetStar(); $('#sheet').classList.add('show');
 }
 function syncSheetStar(){ if(sheetI==null) return; const on=isStar(day,DB[day].list[sheetI].key); const b=$('#sStar'); b.classList.toggle('on',on); b.textContent=on?'★ 已收藏':'☆ 加入收藏'; }
